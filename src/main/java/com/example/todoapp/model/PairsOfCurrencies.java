@@ -1,7 +1,13 @@
 package com.example.todoapp.model;
 
-import java.util.List;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
+@Document("pairs")
 public class PairsOfCurrencies {
-    public static final List<String> pairs = List.of("XRP:USD", "ETH:USD", "BTC:USD");
+    @Id
+    private String id;
+    private String name;
 }
